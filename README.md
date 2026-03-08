@@ -52,7 +52,6 @@ A user can prove predicates about their credentials (e.g. *"I am over 18"* or *"
     ├── ps_nat.rs\
     ├── ps_rand.rs\
     └── wallet_core.rs
----
 
 ## ⚙️ Installation & Setup
 
