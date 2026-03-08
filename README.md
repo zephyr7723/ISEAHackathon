@@ -15,45 +15,34 @@ This project implements a zkSNARK-based credential wallet using:
 - **Neon (Node.js native bindings)** — for JavaScript interop via a native `.node` module
 
 A user can prove predicates about their credentials (e.g. *"I am over 18"* or *"I am from country X"*) to a verifier **without revealing** their actual date of birth or nationality.
-
 ---
 
 ## 🗂 Project Structure
 ```
-.\
-├── Cargo.lock \
-├── Cargo.toml\
-├── js\
-│   ├── demo_bridge.js\
-│   ├── demo.js\
-│   ├── issuer.js\
-│   ├── wallet_bridge.js\
-│   └── wallet.js\
-├── native\
-│   └── index.node\
-├── node_modules\
-│   └── cargo-cp-artifact\
-│       ├── bin\
-│       │   └── cargo-cp-artifact.js\
-│       ├── LICENSE\
-│       ├── package.json\
-│       ├── README.md\
-│       └── src\
-│           ├── args.js\
-│           └── index.js\
-├── package.json\
-├── package-lock.json\
-└── src\
-    ├── bn254_ps.rs\
-    ├── credential_machine.rs\
-    ├── machine.rs\
-    ├── main.rs\
-    ├── ps_dob.rs\
-    ├── ps_nat.rs\
-    ├── ps_rand.rs\
-    └── wallet_core.rs
+.
+├── src/
+│   ├── main.rs                  # Entry point
+│   ├── wallet_core.rs           # Core ZKP proving logic (prove_credential)
+│   ├── machine.rs               # PublicParams setup & credential machine runner
+│   ├── credential_machine.rs    # SuperNova step circuit definitions
+│   ├── bn254_ps.rs              # PS signature scheme on BN254
+│   ├── ps_rand.rs               # PsRand circuit (signature rerandomisation)
+│   ├── ps_dob.rs                # PsDob circuit (age predicate)
+│   └── ps_nat.rs                # PsNat circuit (nationality predicate)
+├── js/
+│   ├── wallet.js                # JS wallet interface
+│   ├── issuer.js                # JS credential issuer
+│   ├── wallet_bridge.js         # Native bridge for wallet
+│   ├── demo_bridge.js           # Demo bridge
+│   └── demo.js                  # End-to-end demo
+├── native/
+│   └── index.node               # Compiled Rust native module
+├── Cargo.toml
+└── package.json
+```
 
-## ⚙️ Installation & Setup
+---
+
 
 ### Prerequisites
 
