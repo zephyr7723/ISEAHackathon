@@ -1,5 +1,5 @@
 # File Structure
-.
+.\
 ├── Cargo.lock \
 ├── Cargo.toml\
 ├── js\
@@ -19,7 +19,7 @@
 │       ├── README.md\
 │       └── src\
 │           ├── args.js\
-│           └── index.js
+│           └── index.js\
 ├── package.json\
 ├── package-lock.json\
 └── src\
@@ -30,4 +30,4 @@
     ├── ps_dob.rs\
     ├── ps_nat.rs\
     ├── ps_rand.rs\
-    └── wallet_core.rs\
+    └── wallet_core.rs
