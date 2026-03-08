@@ -82,13 +82,14 @@ This will:
 
 ### Run via CLI
 ```bash
-node cli.js
+Terminal A:
+node cli.js verifier listen --port 8080
+
+Terminal B
+node cli.js prove --verifier 127.0.0.1:8080
 ```
 
-### Run Rust tests
-```bash
-cargo test
-```
+
 
 ---
 
